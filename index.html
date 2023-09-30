@@ -6,5 +6,41 @@
     </head>
     <body>
         <script src="Game.js"></script>
+        <script>
+            
+
+            
+            function game(){
+                let playerCounter=0;
+                let computerCounter=0;
+                for(let i=1;i<6;i++){
+                    let playersChoice=prompt("Make a choice","scissors");
+                    let computerChoice=getComputerChoice();
+                    
+                    let report=playRound(playersChoice,computerChoice);
+                    if(report[0]==="Y" && report[4]==="W"){
+                        playerCounter++;
+                    }
+                    else if(report[0]==="Y" && report[4]==="L"){
+                        computerCounter++;
+                    }
+                    else{
+                        playerCounter=playerCounter;
+                        computerCounter=computerCounter;
+                    }
+                   console.log(report) 
+                }
+                if(playerCounter>computerCounter){
+                   console.log("You Win");
+                }
+                else if(playerCounter<computerCounter){
+                    console.log("You lose");
+                }
+                else{
+                    console.log("There is a tie");
+                }
+            }
+            game();
+        </script>
     </body>
 </html>
